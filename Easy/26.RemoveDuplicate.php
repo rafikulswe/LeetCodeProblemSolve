@@ -7,10 +7,12 @@
 function removeDuplicates($nums)
 {
     $uniqueQty = 1;
-    for ($i = 1; $i < count($nums); $i++) {
-        if ($nums[$i] != $nums[$i - 1]) {
+    $i = 0;
+    for ($j = 1; $j < count($nums); $j++) {
+        if ($nums[$i] != $nums[$j]) {
+            $i++;
             $uniqueQty += 1;
-            $nums[$uniqueQty] = $nums[$i];
+            $nums[$i] = $nums[$j];
         }
     }
     return $uniqueQty;
